@@ -25,6 +25,5 @@ instances = ec2.create_instances(
     MaxCount=1,
     InstanceType='t2.micro',
     KeyName='keypair6/11/20',
-    NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0, 'AssociatePublicIpAddress': True}],
-    id='1'
+    NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0, 'AssociatePublicIpAddress': True}]
  )
