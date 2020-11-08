@@ -17,9 +17,9 @@ vpc.create_tags(Tags=[{"Key": "Name", "Value": "Deloitte_VPC"}])
 subnet = ec2.create_subnet(CidrBlock='10.10.0.0/16', VpcId=vpc.id)
 # vpc.wait_until_available()
 
-
+opsworks = boto3.connect_opsworks(aws_access_key_id='AKIA5DCDMB67XVRNYFUH', aws_secret_access_key='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')
 # create ec2 in the vpc
-instances = ec2.create_instances(
+instances = opsworks.create_instances(
     ImageId='ami-0952fb5203ddacf5c',
     MinCount=1,
     MaxCount=1,
