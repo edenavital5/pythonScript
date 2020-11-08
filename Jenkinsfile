@@ -9,7 +9,7 @@ pipeline {
             //     sh 'python Deloitte.py'
             // }
             steps{
-                withCredentials([[$class: 'AbstractOnDiskBinding',credentialsId: 'aws',usernameVariable: 'AWS_ACCESS_KEY_ID',passwordVariable: 'AWS_SECRET_ACCESS_KEY']]){
+                withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'aws',usernameVariable: 'AWS_ACCESS_KEY_ID',passwordVariable: 'AWS_SECRET_ACCESS_KEY']]){
                     sh "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
                     sh "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" 
                     
