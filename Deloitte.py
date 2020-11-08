@@ -1,6 +1,6 @@
 import boto3
 
-ec2 = boto3.resource('ec2')
+ec2 = boto3.resource('ec2', region_name='us-east-2', api_version='2016-04-01') 
 
 # how many instance running
 instancesCount=0
