@@ -1,7 +1,7 @@
 import boto3
 
 ec2 = boto3.resource('ec2', region_name='us-east-2', api_version='2016-04-01') 
-
+# , aws_access_key_id=ACCESS_ID, aws_secret_access_key= ACCESS_KEY
 # how many instance running
 instancesCount=0
 instances = ec2.instances.filter(
