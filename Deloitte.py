@@ -20,7 +20,6 @@ subnet = ec2.create_subnet(CidrBlock='10.10.0.0/16', VpcId=vpc.id)
 
 # create ec2 in the vpc
 instances = ec2.create_instances(
-    Id='1',
     ImageId='ami-0952fb5203ddacf5c',
     MinCount=1,
     MaxCount=1,
