@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                //echo "Hello World again!"
-                sh 'python --version'
+                echo "Hello python script"
+                //sh 'python --version'
                 sh 'python Deloitte.py'
             }
             // steps{
