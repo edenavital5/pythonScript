@@ -25,5 +25,5 @@ instances = ec2.create_instances(
     InstanceType='t2.micro',
     KeyName='keypair6/11/20',
     NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0}],
-    IamInstanceProfile={'Id': "AKIA5DCDMB67XVRNYFUH", 'Arn': "arn:aws:iam::899936948159:role/ec2-role"}
+    IamInstanceProfile={'Name': "ec2-role", 'Arn': "arn:aws:iam::899936948159:role/ec2-role"}
  )
