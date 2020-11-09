@@ -1,6 +1,6 @@
 import boto3
 
-ec2 = boto3.resource('ec2', region_name='us-east-2', api_version='2016-04-01', aws_access_key_id='AKIA5DCDMB67XVRNYFUH', aws_secret_access_key= '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') 
+ec2 = boto3.resource('ec2', region_name='us-east-2', api_version='2016-04-01', aws_access_key_id='AKIA5DCDMB67RZOFWBVH', aws_secret_access_key= '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') 
 
 # how many instance running
 instancesCount=0
@@ -25,5 +25,5 @@ instances = ec2.create_instances(
     InstanceType='t2.micro',
     KeyName='keypair6/11/20',
     NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0}],
-    IamInstanceProfile={'Arn': "arn:aws:iam::899936948159:policy/policy-create-instance"}
+    # IamInstanceProfile={'Arn': "arn:aws:iam::899936948159:role/ec2-role"}
  )
