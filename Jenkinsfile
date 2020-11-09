@@ -1,6 +1,8 @@
 properties([pipelineTriggers([githubPush()])])
 pipeline {
-    agent any
+    agent {
+        label 'github-ci'
+    }
 
     stages {
         stage('Checkout SCM') {
@@ -9,7 +11,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: 'master']],
                     userRemoteConfigs: [[
-                        url: 'git@github.com:wshihadeh/rabbitmq_client.git',
+                        url: 'git@github.com:edenavital5/pythonScript.git',
                         credentialsId: '',
       ]]
      ])
