@@ -1,22 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 pipeline {
-    agent {
-        label 'github-ci'
-    }
+    agent any
 
-    stages {
-        stage('Checkout SCM') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: 'master']],
-                    userRemoteConfigs: [[
-                        url: 'git@github.com:edenavital5/pythonScript.git',
-                        credentialsId: '',
-      ]]
-     ])
-   }
-}
         stage('build') {
             steps {
                 echo "Hello python script!"
