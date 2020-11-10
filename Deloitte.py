@@ -1,8 +1,12 @@
 import boto3
 
-ec2 = boto3.resource('ec2', region_name='us-east-2', api_version='2016-04-01', aws_access_key_id='AKIA5DCDMB67RZOFWBVH', aws_secret_access_key= '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') 
+ec2 = boto3.resource('ec2',
+    region_name='us-east-2',
+    api_version='2016-04-01',
+    aws_access_key_id='AKIA5DCDMB67RZOFWBVH',
+    aws_secret_access_key= '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') 
 
-# how many instance running
+# how many instances are running
 instancesCount=0
 instances = ec2.instances.filter(
     Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
@@ -22,5 +26,4 @@ instances = ec2.create_instances(
     MaxCount=1,
     InstanceType='t2.micro',
     KeyName='keypair6/11/20',
-    NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0}],
- )
+    NetworkInterfaces=[{'SubnetId': subnet.id, 'DeviceIndex': 0}])
