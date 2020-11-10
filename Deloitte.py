@@ -10,12 +10,11 @@ for instance in instances:
     instancesCount+=1
 print("instances:",instancesCount)
 
-
 # create vpc and subnet 
 vpc = ec2.create_vpc(CidrBlock='10.10.0.0/16')
 vpc.create_tags(Tags=[{"Key": "Name", "Value": "Deloitte_VPC"}])
 subnet = ec2.create_subnet(CidrBlock='10.10.0.0/16', VpcId=vpc.id)
-# vpc.wait_until_available()
+vpc.wait_until_available()
 
 # create ec2 in the vpc
 instances = ec2.create_instances(
